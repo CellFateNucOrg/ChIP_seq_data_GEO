@@ -37,6 +37,7 @@ bash 05_normalize.sh $SRR_exp
 
 echo "Cleaning up..."
 cd $working_path/$SRR_exp
+rm -r dedup
 rm -r SRR_download
 rm trimmed_fq/*.fq.gz
 rm -r bam

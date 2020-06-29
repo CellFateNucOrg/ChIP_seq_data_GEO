@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --mail-user=peter.meister@izb.unibe.ch
 #SBATCH --mail-type=end,fail
-#SBATCH --array=2-2%1
+#SBATCH --array=2-103%10
 #SBATCH --job-name="ChIP_seq_modENCODE"
 #SBATCH --time=2-12:00:00
 #SBATCH --cpus-per-task=4
