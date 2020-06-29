@@ -3,13 +3,14 @@
 Create a folder with the right GEO number
 Clone the current git inside this folder (git clone https://github.com/CellFateNucOrg/ChIP_seq_data_GEO.git)
 
-Look for the SRR numbers of the ChIP-seq datasets which you want to use
+Look for the SRR numbers of the ChIP-seq datasets which you want to use (online on the GEO server).
+Save this as a ";" separated file (see below)
 
 To use this script, you will need to modify 3 files.
 
 The file_locations.sh In this file, you need to define a. where is the fasta of your genome of interest (only the path), as well as the bwa index (obtained using bwa index genome_fasta.fa) b. where is trim_galore (only the path)
 
-the SRR_names.csv this is a comma separated file with the SRR numbers and the name of the target, plus any comment column 1: input column 2: IP column 3: name column 4: comments (optional) On the first 2 columns, if there are several SRR numbers, separate them by space
+the SRR_names.csv this is a semicolon separated file with the SRR numbers and the name of the target, plus any comment column 1: input column 2: IP column 3: name column 4: comments (optional) On the first 2 columns, if there are several SRR numbers, separate them by space
 
 3.Finally, you need to update the looper.sh file, modifying line 4 
 #SBATCH --array=2-3%1 
