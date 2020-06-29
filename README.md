@@ -1,5 +1,8 @@
 #Automated ChIP-seq data analysis scripts, requiring the SRR numbers of the analysis. 
 
+Create a folder with the right GEO number
+Clone the current git inside this folder (git clone https://github.com/CellFateNucOrg/ChIP_seq_data_GEO.git)
+
 Look for the SRR numbers of the ChIP-seq datasets which you want to use
 
 To use this script, you will need to modify 3 files.
@@ -12,7 +15,9 @@ the SRR_names.csv this is a comma separated file with the SRR numbers and the na
 #SBATCH --array=2-3%1 
                   ^ ^ 
                   1 2 
-                  
 Modify 1 with the number of datasets which you have in the SRR_names.csv, plus 1 Modify 2 with the number of cores which you want to use. More cores, faster results. But be reasonable and a good citizen, 10 is a good number.
+Modify the email address to yours in 
+#SBATCH --mail-user=peter.meister@izb.unibe.ch
 
 All set? Run with sbatch looper.sh
+The scripts outputs an enrichment (normalized RPM IP - normalized RPM input; in the enrichment folder, bw format), plus a normalized bw for IP and input (for checking purposes) 

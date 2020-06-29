@@ -15,9 +15,9 @@ print(args)
 #4. deduplicated with picard (in ./dedup folder)
 #5. sorted with samtools (in ./dedup folder)
 
-setwd(paste0("./",args[1],"/"))
-current_dir <- getwd()
-print(current_dir)
+setwd(args[1])
+#current_dir <- getwd()
+#print(current_dir)
 read_depth <- matrix(nrow=2, ncol=1)
 filenames <- list.files(path="./dedup/", pattern="*_sorted_dedup_sorted.bam$")
 print(filenames)
@@ -26,7 +26,7 @@ for (i in (1:length(filenames)))
 {
   f <- filenames[i]
   #read in bam file
-  bamFile<-readGAlignments(paste0("./dedup/",f))
+  bamFile<-readGAlignments(paste0(args[1],"/dedup/",f))
  bamFile<-GRanges(bamFile)
   #extend reads to 200 bp from the start, taking into account the directionality 
   #(identical to MACS pileup)
@@ -41,7 +41,7 @@ for (i in (1:length(filenames)))
   rpm_norm <- bindAsGRanges(rpm_norm)
   names(mcols(rpm_norm))<-"score"
   #Save bigwig file in ./norm/ folder
-  export.bw(rpm_norm, paste0("./norm/",gsub(".bam","_no_pseudo_ext200_norm.bw",filenames[i])))
+  export.bw(rpm_norm, paste0(args[1],"/norm/",gsub(".bam","_no_pseudo_ext200_norm.bw",filenames[i])))
 }
 
 #Save the mapped read number for each library with correct row names and column name
@@ -54,16 +54,17 @@ write.table(read_depth,("./norm/Sequencing_depth.txt"))
 
 #Substract normalized mapped read counts at each position
 #Load paired input/IP RPM bigwig tracks
-  input <-import("./norm/input_trimmed_sorted_dedup_sorted_no_pseudo_ext200_norm.bw")
-print("Input loaded")
-  ChIP <- import("./norm/IP_trimmed_sorted_dedup_sorted_no_pseudo_ext200_norm.bw")
- print("IP loaded")  
-#Calculate enrichment by substracting input to IP 
+  input <-import(paste0(args[1],"/norm/input_trimmed_sorted_dedup_sorted_no_pseudo_ext200_norm.bw"))
+  print("Input loaded")
+  ChIP <- import(paste0(args[1],"/norm/IP_trimmed_sorted_dedup_sorted_no_pseudo_ext200_norm.bw"))
+  print("IP loaded")  
+  #Calculate enrichment by substracting input to IP 
   enrichment <- (mcolAsRleList(ChIP,"score"))-(mcolAsRleList(input,"score"))
   #Transform RleList into GRange
   enrichment <- bindAsGRanges(enrichment)
   #Change mcol name for saving as bigwig
   names(mcols(enrichment))<-"score"
   #Save track as bigwig in ./enrichment
-  export.bw(enrichment, paste0("./enrichment/ChIP_enrichment_substract_norm_",args[1],".bw"))
+  export.bw(enrichment, paste0(args[1],"/enrichment/ChIP_enrichment_substract_norm_",rev(unlist(strsplit(args[1],"/")))[1],".bw"))
+
 
