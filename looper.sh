@@ -8,6 +8,7 @@
 #SBATCH --mem-per-cpu=8G
 #current_path=$PWD
 echo $PWD
+source file_locations.sh
 working_path="$(dirname "$(pwd)")"
 export working_path=$working_path
 echo $working_path
