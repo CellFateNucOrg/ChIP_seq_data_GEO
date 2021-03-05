@@ -8,19 +8,19 @@ Save this as a ";" separated file (see below)
 
 To use this script, you will need to modify 3 files.
 
-The **file_locations.sh** In this file, you need to define a. where is the fasta of your genome of interest (only the path), as well as the bwa index (obtained using bwa index genome_fasta.fa) b. where is trim_galore (only the path)
+1. **file_locations.sh** In this file, you need to define a. where is the fasta of your genome of interest (only the path), as well as the bwa index (obtained using bwa index genome_fasta.fa) b. where is trim_galore (only the path)
 
-the **SRR_names.csv** this is a semicolon separated file with the SRR numbers and the name of the target, plus any comment 
+2. **SRR_names.csv** this is a semicolon separated file with the SRR numbers and the name of the target, plus any comment 
 
-column 1: input 
+_**column 1: input**_ 
 
-column 2: IP 
+_**column 2: IP**_
 
-column 3: name column IMPORTANT: this name needs to be unique to this dataset (ie if you have repeats, use "_1" and "_2"  to differentiate them 4: comments (optional) On the first 2 columns, if there are several SRR numbers, separate them by space. This you can use as a "group" marker to make averages of duplicates later (ie ChIP repeats get the same group number)
+_**column 3: name**_ IMPORTANT: this name needs to be unique to this dataset (ie if you have repeats, use "_1" and "_2"  to differentiate them 4: comments (optional) On the first 2 columns, if there are several SRR numbers, separate them by space. This you can use as a "group" marker to make averages of duplicates later (ie ChIP repeats get the same group number)
 
-column 4: group. This is to designate grouping that is above the level of replicates in a single experiment.. i.e. if there are two entirely separate IP experiments for H3K9me3, then you can give them the same number here, making it easier to 
+_**column 4: group**_ This is to designate grouping that is above the level of replicates in a single experiment.. i.e. if there are two entirely separate IP experiments for H3K9me3, then you can give them the same number here, making it easier to 
 
-Finally, you need to update the **looper.sh** file, modifying line 4 
+3. Update the **looper.sh** file, modifying line 4 
 #SBATCH --array=2-3%1 
                   ^ ^ 
                   1 2 
