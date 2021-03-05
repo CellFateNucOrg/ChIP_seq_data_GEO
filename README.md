@@ -45,15 +45,17 @@ To get SRR names from GEO ids, used the reutils package, see the script **getSRR
 1) To get data from ftp site click on the "Dataset" button on the main modencode page http://www.modencode.org, and then select criteria on the left hand side: 
 
   Organism - C . elegans, 
-  Project Category - Histone modification and replacement
-  Technique - Chip-Seq
-  79 datasets, made sure all the rows of the table were visible and copy pasted into text file **metadata_histoneMod.tsv**
-  selected all the datasets by clicking on the Dataset button at the top of that column in the table, and got the ftp addresses by clicking on the now visible "List Download URLs" button. Copied the download urls in to the test file **downloadursl_histoneMod.txt**
+  Project Category - Histone modification and replacement,
+  Technique - Chip-Seq:
+  
+  79 datasets. Made sure all the rows of the table were visible and copy pasted into text file **metadata_histoneMod.tsv**.
+  Selected all the datasets by clicking on the Dataset button at the top of that column in the table, and got the ftp addresses by clicking on the now visible "List Download URLs" button. Copied the download urls in to the test file **downloadursl_histoneMod.txt**
 
 
   Organism - C . elegans, 
-  Project Category - Other chromatin binding sites
-  Technique - Chip-Seq
-  56 datasets, made sure all the rows of the table were visible and copy pasted into text file **metadata_otherChrBind.tsv**
-  selected all the datasets by clicking on the Dataset button at the top of that column in the table, and got the ftp addresses by clicking on the now visible "List Download URLs" button. Copied the download urls in to the test file **downloadursl_otherChrBind.txt**
+  Project Category - Other chromatin binding sites,
+  Technique - Chip-Seq:
+  
+  56 datasets. Made sure all the rows of the table were visible and copy pasted into text file **metadata_otherChrBind.tsv**.
+  Selected all the datasets by clicking on the Dataset button at the top of that column in the table, and got the ftp addresses by clicking on the now visible "List Download URLs" button. Copied the download urls in to the test file **downloadursl_otherChrBind.txt**
 
