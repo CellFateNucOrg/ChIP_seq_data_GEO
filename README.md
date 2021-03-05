@@ -16,9 +16,10 @@ _**column 1: input**_
 
 _**column 2: IP**_
 
-_**column 3: name**_ IMPORTANT: this name needs to be unique to this dataset (ie if you have repeats, use "_1" and "_2"  to differentiate them 4: comments (optional) On the first 2 columns, if there are several SRR numbers, separate them by space. This you can use as a "group" marker to make averages of duplicates later (ie ChIP repeats get the same group number)
+_**column 3: name**_ IMPORTANT: this name needs to be unique to this dataset (ie if you have repeats, use "\_1" and "\_2"  to differentiate them 4: comments (optional) On the first 2 columns, if there are several SRR numbers, separate them by space. This you can use as a "group" marker to make averages of duplicates later (ie ChIP repeats get the same group number)
 
 _**column 4: group**_ This is to designate grouping that is above the level of replicates in a single experiment.. i.e. if there are two entirely separate IP experiments for H3K9me3, then you can give them the same number here, making it easier to 
+
 
 3. Update the **looper.sh** file, modifying line 4 
 #SBATCH --array=2-3%1 
