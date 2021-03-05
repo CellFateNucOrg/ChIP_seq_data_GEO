@@ -8,11 +8,19 @@ Save this as a ";" separated file (see below)
 
 To use this script, you will need to modify 3 files.
 
-The file_locations.sh In this file, you need to define a. where is the fasta of your genome of interest (only the path), as well as the bwa index (obtained using bwa index genome_fasta.fa) b. where is trim_galore (only the path)
+The **file_locations.sh** In this file, you need to define a. where is the fasta of your genome of interest (only the path), as well as the bwa index (obtained using bwa index genome_fasta.fa) b. where is trim_galore (only the path)
 
-the SRR_names.csv this is a semicolon separated file with the SRR numbers and the name of the target, plus any comment column 1: input column 2: IP column 3: name column IMPORTANT: this name needs to be unique to this dataset (ie if you have repeats, use "_1" and "_2"  to differentiate them 4: comments (optional) On the first 2 columns, if there are several SRR numbers, separate them by space. This you can use as a "group" marker to make averages of duplicates later (ie ChIP repeats get the same group number)
+the **SRR_names.csv** this is a semicolon separated file with the SRR numbers and the name of the target, plus any comment 
 
-3.Finally, you need to update the looper.sh file, modifying line 4 
+column 1: input 
+
+column 2: IP 
+
+column 3: name column IMPORTANT: this name needs to be unique to this dataset (ie if you have repeats, use "_1" and "_2"  to differentiate them 4: comments (optional) On the first 2 columns, if there are several SRR numbers, separate them by space. This you can use as a "group" marker to make averages of duplicates later (ie ChIP repeats get the same group number)
+
+column 4: group. This is to designate grouping that is above the level of replicates in a single experiment.. i.e. if there are two entirely separate IP experiments for H3K9me3, then you can give them the same number here, making it easier to 
+
+Finally, you need to update the **looper.sh** file, modifying line 4 
 #SBATCH --array=2-3%1 
                   ^ ^ 
                   1 2 
@@ -20,7 +28,7 @@ Modify 1 with the number of datasets which you have in the SRR_names.csv, plus 1
 Modify the email address to yours in 
 #SBATCH --mail-user=peter.meister@izb.unibe.ch
 
-All set? Run with sbatch looper.sh
+All set? Run with sbatch **looper.sh**
 The scripts outputs an enrichment (normalized RPM IP - normalized RPM input; in the enrichment folder, bw format), plus a normalized bw for IP and input (for checking purposes) 
 
 
