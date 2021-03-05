@@ -28,7 +28,7 @@ The scripts outputs an enrichment (normalized RPM IP - normalized RPM input; in 
 Not all modencode data has an associated GEO ID. But the modencode ftp site is terrible at providing metadata, and you have to guess from the often messy names. Also, the metadata on modENCODE is not as precise as that found via GEO, for instance, many histone marks just say "L3" and one might assume these are hermaphrodites only, but if you look at the annotation on GEO you see that these are mixed male and female hermaphrodites). So when possible we want to get the GEO accessions and download metadata, and for those that fail, we want to get data via ftp directly from modENCODE and get any metadata possible. 
 
 ## Getting data with GEO ID
-1) From the main website of modENCONDE, navigate to the project you are interested in http://www.modencode.org, which will take you to the intermine site. I manually copied the html table to Excel for the following repositories: 
+1) From the main website of modENCONDE, navigate to the project you are interested in http://www.modencode.org, which will take you to the intermine site. I manually copied the html table to Excel for the following experiments: 
 
 **Chromatin ChIP-seq of non-Histone Chromosomal Proteins in C. elegans** *http://intermine.modencode.org/query/experiment.do?experiment=Chromatin+ChIP-seq+of+non-Histone+Chromosomal+Proteins+in+C.+elegans* to create the **modEncode_chromatinChipSeq_nonHistone.xlsx** table.  
 
