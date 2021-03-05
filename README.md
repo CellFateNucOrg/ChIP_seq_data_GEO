@@ -39,7 +39,7 @@ Not all modencode data has an associated GEO ID. But the modencode ftp site is t
 TODO: processing table
 This was pasted onto the next sheet as plain text. 
 
-To get SRR names from GEO data the script **using_retutils.R** was used 
+To get SRR names from GEO ids, used the reutils package, see the script **getSRRfromGSM.R**. 
 
 ## Getting data from ftp server
 1) To get data from ftp site click on the "Dataset" button on the main modencode page http://www.modencode.org, and then select criteria on the left hand side: 
