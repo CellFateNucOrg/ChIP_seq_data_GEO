@@ -1,4 +1,4 @@
-#Automated ChIP-seq data analysis scripts, requiring the SRR numbers of the analysis. 
+# Automated ChIP-seq data analysis scripts, requiring the SRR numbers of the analysis. 
 
 Create a folder with the right GEO number
 Clone the current git inside this folder (git clone https://github.com/CellFateNucOrg/ChIP_seq_data_GEO.git)
