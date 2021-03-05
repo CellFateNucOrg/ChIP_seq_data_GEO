@@ -1,0 +1,57 @@
+ Dataset	Organism	Technique	Target Element	Assay Factor	Conditions	PI	ID
+ AMA-1;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	AMA-1	Embryos mixed stages 20 degree celsius	Lieb, J.	6227 and 6230
+ AMA-1;fem-2(b245);Germline containing Young adult;20 degree Celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	AMA-1	Germline containing Young adult 20 degree Celsius	Lieb, J.	6262
+ ASH-2;fem-2(b245);Germline containing Young adult;20 degree Celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	ASH-2	Germline containing Young adult 20 degree Celsius	Lieb, J.	5231
+ CEC-1;fem-2(b245);Germline containing Young adult;20 degree Celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	CEC-1	Germline containing Young adult 20 degree Celsius	Lieb, J.	6008
+ CEC-7;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	CEC-7	Germline containing Young adult 20 degree celsius	Lieb, J.	6374 and 6375
+ CHD-3;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	CHD-3	Germline containing Young adult 20 degree celsius	Lieb, J.	5207 and 5214
+ COH-1;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	COH-1	Germline containing Young adult 20 degree celsius	Lieb, J.	5186 and 6282
+ COH-3;fem-2(b245);Germline containing Young adult;20 degree Celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	COH-3	Germline containing Young adult 20 degree Celsius	Lieb, J.	5222 and 5230
+ CtBP;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	CtBP	Embryos mixed stages 20 degree celsius	Lieb, J.	6234
+ DPY-26;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	DPY-26	Embryos mixed stages 20 degree celsius	Lieb, J.	6269 and 6281
+ DPY-27;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	DPY-27	Larvae L3 stage 20 degree celsius	Lieb, J.	3571
+ DPY-28;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	DPY-28	Embryos mixed stages 20 degree celsius	Lieb, J.	6285
+ DPY-30;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	DPY-30	Embryos mixed stages 20 degree celsius	Lieb, J.	6232
+ H3K4me1;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor and Histone Modification	H3K4me1	Germline containing Young adult 20 degree celsius	Lieb, J.	5245 and 6246
+ HCP-4;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	HCP-4	Embryos mixed stages 20 degree celsius	Lieb, J.	6023
+ HDA-1;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	HDA-1	Larvae L3 stage 20 degree celsius	Lieb, J.	5973
+ HIM-5;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	HIM-5	Germline containing Young adult 20 degree celsius	Lieb, J.	6301
+ HPL-2;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	HPL-2	Larvae L3 stage 20 degree celsius	Lieb, J.	5976
+ HTP3;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	HTP3	Germline containing Young adult 20 degree celsius	Lieb, J.	6272
+ HTZ-1;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	HTZ-1	Embryos mixed stages 20 degree celsius	Lieb, J.	6218
+ HTZ-1;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	HTZ-1	Larvae L3 stage 20 degree celsius	Lieb, J.	3569
+ IgG control;Ab:AB46540 NIgG:JL:1;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	IgG control	Embryos mixed stages 20 degree celsius	Lieb, J.	6208
+ IMB-1;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	IMB-1	Embryos mixed stages 20 degree celsius	Lieb, J.	6257
+ KLE-2;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	KLE-2	Germline containing Young adult 20 degree celsius	Lieb, J.	5220
+ LET-418;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	LET-418	Larvae L3 stage 20 degree celsius	Lieb, J.	5974 and 5975
+ LIN-53;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	LIN-53	Larvae L3 stage 20 degree celsius	Lieb, J.	3574
+ LIN-61;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	LIN-61	Larvae L3 stage 20 degree celsius	Lieb, J.	5979 and 5980
+ MAU-2;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	MAU-2	Embryos mixed stages 20 degree celsius	Lieb, J.	6267
+ MIS-12;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	MIS-12	Embryos mixed stages 20 degree celsius	Lieb, J.	6021
+ MIX-1;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	MIX-1	Embryos mixed stages 20 degree celsius	Lieb, J.	6237
+ MRE-11;fem-2(b245);Germline containing Young adult;20 degree Celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	MRE-11	Germline containing Young adult 20 degree Celsius	Lieb, J.	5190, 5193, and 5209
+ MRG-1;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	MRG-1	Early Embryos 20 degree celsius	Lieb, J.	6341
+ MRG-1;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	MRG-1	Germline containing Young adult 20 degree celsius	Lieb, J.	5189 and 5219
+ MRG-1;fem-2(b245);Germline containing Young adult;20 degree Celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	MRG-1	Germline containing Young adult 20 degree Celsius	Lieb, J.	5233
+ MSH-5;fem-2(b245);Germline containing Young adult;20 degree Celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	MSH-5	Germline containing Young adult 20 degree Celsius	Lieb, J.	5208 and 5216
+ NURF-1;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	NURF-1	Larvae L3 stage 20 degree celsius	Lieb, J.	5985, 5986, and 5987
+ PQN-85;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	PQN-85	Embryos mixed stages 20 degree celsius	Lieb, J.	6265
+ RAD-51;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	RAD-51	Germline containing Young adult 20 degree celsius	Lieb, J.	3923
+ REC-8;fem-2(b245);Germline containing Young adult;20 degree Celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	REC-8	Germline containing Young adult 20 degree Celsius	Lieb, J.	5224 and 6278
+ REC-8;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	REC-8	Germline containing Young adult 20 degree celsius	Lieb, J.	6276
+ RNA polII CTD domain unphosophorylated;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	RNA polII CTD domain unphosophorylated	Early Embryos 20 degree celsius	Lieb, J.	6344
+ RPC-1;Ab:SDQ4663 RPC1:JL:1;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	RPC-1	Larvae L3 stage 20 degree celsius	Lieb, J.	6300
+ SCC-1;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	SCC-1	Germline containing Young adult 20 degree celsius	Lieb, J.	5187 and 5188
+ SDC-1;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	SDC-1	Embryos mixed stages 20 degree celsius	Lieb, J.	6235
+ SMC-4;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	SMC-4	Embryos mixed stages 20 degree celsius	Lieb, J.	6219
+ SMC-6;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	SMC-6	Embryos mixed stages 20 degree celsius	Lieb, J.	6283
+ SWD-3;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	SWD-3	Embryos mixed stages 20 degree celsius	Lieb, J.	6297
+ T09A5.8;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	T09A5.8	Germline containing Young adult 20 degree celsius	Lieb, J.	3917 and 6007
+ T26A5.5;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	T26A5.5	Early Embryos 20 degree celsius	Lieb, J.	6329
+ TAF-1;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	TAF-1	Embryos mixed stages 20 degree celsius	Lieb, J.	6251
+ TBP-1;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	TBP-1	Embryos mixed stages 20 degree celsius	Lieb, J.	6223
+ ZFP-1;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	ZFP-1	Larvae L3 stage 20 degree celsius	Lieb, J.	6213
+ ZHP-3;fem-2(b245);Germline containing Young adult;20 degree Celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	ZHP-3	Germline containing Young adult 20 degree Celsius	Lieb, J.	5218 and 5225
+ ZIM-1;fem-2(b245);Germline containing Young adult;20 degree Celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	ZIM-1	Germline containing Young adult 20 degree Celsius	Lieb, J.	5227
+ ZIM-3;fem-2(b245);Germline containing Young adult;20 degree Celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	ZIM-3	Germline containing Young adult 20 degree Celsius	Lieb, J.	5223
+ ZYG-12;WH223;Germline containing Young adult;20 degree Celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor	ZYG-12	Germline containing Young adult 20 degree Celsius	Lieb, J.	5249
