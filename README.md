@@ -22,3 +22,37 @@ Modify the email address to yours in
 
 All set? Run with sbatch looper.sh
 The scripts outputs an enrichment (normalized RPM IP - normalized RPM input; in the enrichment folder, bw format), plus a normalized bw for IP and input (for checking purposes) 
+
+
+# modENCONDE data
+Not all modencode data has an associated GEO ID. But the modencode ftp site is terrible at providing metadata, and you have to guess from the often messy names. Also, the metadata on modENCODE is not as precise as that found via GEO, for instance, many histone marks just say "L3" and one might assume these are hermaphrodites only, but if you look at the annotation on GEO you see that these are mixed male and female hermaphrodites). So when possible we want to get the GEO accessions and download metadata, and for those that fail, we want to get data via ftp directly from modENCODE and get any metadata possible. 
+
+## Getting data with GEO ID
+1) From the main website of modENCONDE, navigate to the project you are interested in http://www.modencode.org, which will take you to the intermine site. I manually copied the html table to Excel for the following repositories: 
+
+**Chromatin ChIP-seq of non-Histone Chromosomal Proteins in C. elegans** *http://intermine.modencode.org/query/experiment.do?experiment=Chromatin+ChIP-seq+of+non-Histone+Chromosomal+Proteins+in+C.+elegans* to create the **modEncode_chromatinChipSeq_nonHistone.xlsx** table;  
+
+**Chromatin ChIP-seq of Modified Histones in C. elegans** *http://intermine.modencode.org/query/experiment.do?experiment=Chromatin+ChIP-seq+of+Modified+Histones+in+C.+elegans* to create the **modEncode_ChromatinChipSeq_modHistone.xlsx** table; 
+
+**Chromatin ChIP-seq** *http://intermine.modencode.org/query/experiment.do?experiment=Chromatin+ChIP-seq* to create the **ChromatinChipSeq_mix.xlsx**.
+
+TODO: processing table
+
+To get SRR names from GEO data the script **using_retutils.R** was used 
+
+## Getting data from ftp server
+1) This was pasted onto the next sheet as plain text. To get data from ftp site click on the "Dataset" button on the main modencode page. http://www.modencode.org and then select criteria: 
+
+  Organism - C . elegans, 
+  Project Category - Histone modification and replacement
+  Technique - Chip-Seq
+  79 datasets, made sure all the rows of the table were visible and copy pasted into text file **metadata_histoneMod.tsv**
+  selected all the datasets by clicking on the Dataset button at the top of that column in the table, and got the ftp addresses by clicking on the now visible "List Download URLs" button. Copied the download urls in to the test file **downloadursl_histoneMod.txt**
+
+
+  Organism - C . elegans, 
+  Project Category - Other chromatin binding sites
+  Technique - Chip-Seq
+  56 datasets, made sure all the rows of the table were visible and copy pasted into text file **metadata_otherChrBind.tsv**
+  selected all the datasets by clicking on the Dataset button at the top of that column in the table, and got the ftp addresses by clicking on the now visible "List Download URLs" button. Copied the download urls in to the test file **downloadursl_otherChrBind.txt**
+
