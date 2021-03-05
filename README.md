@@ -12,22 +12,22 @@ To use this script, you will need to modify 3 files.
 
 2. **SRR_names.csv** this is a semicolon separated file with the SRR numbers and the name of the target, plus any comment 
 
-_**column 1: input**_ 
+  _**column 1: input**_ 
 
-_**column 2: IP**_
+  _**column 2: IP**_
 
-_**column 3: name**_ IMPORTANT: this name needs to be unique to this dataset (ie if you have repeats, use "\_1" and "\_2"  to differentiate them 4: comments (optional) On the first 2 columns, if there are several SRR numbers, separate them by space. This you can use as a "group" marker to make averages of duplicates later (ie ChIP repeats get the same group number)
+  _**column 3: name**_ IMPORTANT: this name needs to be unique to this dataset (ie if you have repeats, use "\_1" and "\_2"  to differentiate them 4: comments (optional) On the first 2 columns, if there are several SRR numbers, separate them by space. This you can use as a "group" marker to make averages of duplicates  later (ie ChIP repeats get the same group number)
 
-_**column 4: group**_ This is to designate grouping that is above the level of replicates in a single experiment.. i.e. if there are two entirely separate IP experiments for H3K9me3, then you can give them the same number here, making it easier to 
+  _**column 4: group**_ This is to designate grouping that is above the level of replicates in a single experiment.. i.e. if there are two entirely separate IP experiments for H3K9me3, then you can give them the same number here, making it easier to 
 
 
 3. Update the **looper.sh** file, modifying line 4 
-#SBATCH --array=2-3%1 
-                  ^ ^ 
-                  1 2 
-Modify 1 with the number of datasets which you have in the SRR_names.csv, plus 1 Modify 2 with the number of cores which you want to use. More cores, faster results. But be reasonable and a good citizen, 10 is a good number.
-Modify the email address to yours in 
-#SBATCH --mail-user=peter.meister@izb.unibe.ch
+  #SBATCH --array=2-3%1 
+                    ^ ^ 
+                    1 2 
+  Modify 1 with the number of datasets which you have in the SRR_names.csv, plus 1 Modify 2 with the number of cores which you want to use. More cores, faster results. But be reasonable and a good citizen, 10 is a good number.
+  Modify the email address to yours in 
+  #SBATCH --mail-user=peter.meister@izb.unibe.ch
 
 All set? Run with sbatch **looper.sh**
 The scripts outputs an enrichment (normalized RPM IP - normalized RPM input; in the enrichment folder, bw format), plus a normalized bw for IP and input (for checking purposes) 
