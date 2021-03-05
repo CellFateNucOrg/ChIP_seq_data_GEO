@@ -30,18 +30,19 @@ Not all modencode data has an associated GEO ID. But the modencode ftp site is t
 ## Getting data with GEO ID
 1) From the main website of modENCONDE, navigate to the project you are interested in http://www.modencode.org, which will take you to the intermine site. I manually copied the html table to Excel for the following repositories: 
 
-**Chromatin ChIP-seq of non-Histone Chromosomal Proteins in C. elegans** *http://intermine.modencode.org/query/experiment.do?experiment=Chromatin+ChIP-seq+of+non-Histone+Chromosomal+Proteins+in+C.+elegans* to create the **modEncode_chromatinChipSeq_nonHistone.xlsx** table;  
+**Chromatin ChIP-seq of non-Histone Chromosomal Proteins in C. elegans** *http://intermine.modencode.org/query/experiment.do?experiment=Chromatin+ChIP-seq+of+non-Histone+Chromosomal+Proteins+in+C.+elegans* to create the **modEncode_chromatinChipSeq_nonHistone.xlsx** table.  
 
-**Chromatin ChIP-seq of Modified Histones in C. elegans** *http://intermine.modencode.org/query/experiment.do?experiment=Chromatin+ChIP-seq+of+Modified+Histones+in+C.+elegans* to create the **modEncode_ChromatinChipSeq_modHistone.xlsx** table; 
+**Chromatin ChIP-seq of Modified Histones in C. elegans** *http://intermine.modencode.org/query/experiment.do?experiment=Chromatin+ChIP-seq+of+Modified+Histones+in+C.+elegans* to create the **modEncode_ChromatinChipSeq_modHistone.xlsx** table.
 
-**Chromatin ChIP-seq** *http://intermine.modencode.org/query/experiment.do?experiment=Chromatin+ChIP-seq* to create the **ChromatinChipSeq_mix.xlsx**.
+**Chromatin ChIP-seq** *http://intermine.modencode.org/query/experiment.do?experiment=Chromatin+ChIP-seq* to create the **ChromatinChipSeq_mix.xlsx** table.
 
 TODO: processing table
+This was pasted onto the next sheet as plain text. 
 
 To get SRR names from GEO data the script **using_retutils.R** was used 
 
 ## Getting data from ftp server
-1) This was pasted onto the next sheet as plain text. To get data from ftp site click on the "Dataset" button on the main modencode page. http://www.modencode.org and then select criteria: 
+1) To get data from ftp site click on the "Dataset" button on the main modencode page http://www.modencode.org, and then select criteria on the left hand side: 
 
   Organism - C . elegans, 
   Project Category - Histone modification and replacement
