@@ -16,9 +16,12 @@ To use this script, you will need to modify 3 files.
   >
   > _**column 2: IP**_
   >
-  > _**column 3: name**_ IMPORTANT: this name needs to be unique to this dataset (ie if you have repeats, use "\_1" and "\_2"  to differentiate them 4: comments (optional) On the first 2 columns, if there are several SRR numbers, separate them by space. This you can use as a "group" marker to make averages of duplicates  later (ie ChIP repeats get the same group number)
+  > _**column 3: name**_ IMPORTANT: this name needs to be unique to this dataset (ie if you have repeats, use "\_1" and "\_2"  to differentiate them 
   >
-  > _**column 4: group**_ This is to designate grouping that is above the level of replicates in a single experiment.. i.e. if there are two entirely separate IP experiments for H3K9me3, then you can give them the same number here, making it easier to 
+  > _**column 4: groupDataset** (optional)_ This number designates grouping indicating which replicates belong to a single experiment. This is useful for averaging later.
+  > 
+  > _**column 5: groupTarget** (optional)_ This number designates grouping that is above the level of replicates from a single experiment. i.e. if there are two entirely separate IP experiments for H3K9me3, then you can give them the same number here, making it easier to average them.
+
 
 3. Update the **looper.sh** file, modifying line 4 
   #SBATCH --array=2-3%1 
@@ -32,7 +35,7 @@ All set? Run with sbatch **looper.sh**
 The scripts outputs an enrichment (normalized RPM IP - normalized RPM input; in the enrichment folder, bw format), plus a normalized bw for IP and input (for checking purposes) 
 
 
-# modENCONDE data
+# modENCODE data
 Not all modencode data has an associated GEO ID. But the modencode ftp site is terrible at providing metadata, and you have to guess from the often messy names. Also, the metadata on modENCODE is not as precise as that found via GEO, for instance, many histone marks just say "L3" and one might assume these are hermaphrodites only, but if you look at the annotation on GEO you see that these are mixed male and female hermaphrodites). So when possible we want to get the GEO accessions and download metadata, and for those that fail, we want to get data via ftp directly from modENCODE and get any metadata possible. 
 
 ## Getting data with GEO ID
@@ -47,7 +50,9 @@ Not all modencode data has an associated GEO ID. But the modencode ftp site is t
 2. TODO: processing table
 This was pasted onto the next sheet as plain text. 
 
-3. To get SRR names from GEO ids, used the reutils package, see the script **getSRRfromGSM.R**. 
+3. To get SRR names from GEO ids, used the reutils package, see the script **getSRRfromGSM.R**. The input is the modEncode_chromatinChipSeq_modHistone.csv file and the output is modEncode_chromatinChipSeq_modHistone_fullTable.tsv file with both GEO numbers and SRR numbers. This table is left with multiple similar columns in order to be sure that there is no mixup in the samples (i.e. the metadata downloaded with the SRR numbers (designaated withh _1 in the column name) is the same as that found with the GEO numbers.
+
+4. To construct appropriate input table for the pipeline, use the **makeSRRtable.R** script. Output is the SRR_names_modEncode_GEO.csv file, which is added to the repository.
 
 ## Getting data from ftp server
 1. To get data from ftp site click on the "Dataset" button on the main modencode page http://www.modencode.org, and then select criteria on the left hand side: 
