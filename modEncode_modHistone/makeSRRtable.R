@@ -98,3 +98,5 @@ mEinPrjna<-unique(l3$modEncodeID[grep("SRR\\d*",l3$url)])
 
 l3noSrr<-l3[! l3$modEncodeID %in% mEinPrjna,]
 # only 4 datasets: 5051,5053,5054,5055
+# all these samples have the same input with Fxx01175 and Fxx01517 in the name
+# In the url file they have a .txt.gz extension for some reason
