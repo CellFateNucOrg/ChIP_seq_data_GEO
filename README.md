@@ -47,8 +47,7 @@ Not all modencode data has an associated GEO ID. But the modencode ftp site is t
 >
 > **Chromatin ChIP-seq** *http://intermine.modencode.org/query/experiment.do?experiment=Chromatin+ChIP-seq* to create the **ChromatinChipSeq_mix.xlsx** table.
 
-2. TODO: processing table
-This was pasted onto the next sheet as plain text. 
+2. Pasted the data from the excel table into Sheet2 of the same excel file as plain text. Used the script **cleanExcelTable.R** to create a cleaned up Excel table for the data.
 
 3. To get SRR names from GEO ids, used the reutils package, see the script **getSRRfromGSM.R**. The input is the modEncode_chromatinChipSeq_modHistone.csv file and the output is modEncode_chromatinChipSeq_modHistone_fullTable.tsv file with both GEO numbers and SRR numbers. This table is left with multiple similar columns in order to be sure that there is no mixup in the samples (i.e. the metadata downloaded with the SRR numbers (designaated withh _1 in the column name) is the same as that found with the GEO numbers.
 
@@ -72,4 +71,4 @@ This was pasted onto the next sheet as plain text.
   >56 datasets. Made sure all the rows of the table were visible and copy pasted into text file **metadata_otherChrBind.tsv**.
   >Selected all the datasets by clicking on the Dataset button at the top of that column in the table, and got the ftp addresses by clicking on the now visible "List Download URLs" button. Copied the download urls in to the test file **downloadursl_otherChrBind.txt**
 
-2. processing
+2. All data sets that do not have GEO numbers are processed to check if they belong to one of the previous datasets using the second half of **makeSRRtable.R** script.
