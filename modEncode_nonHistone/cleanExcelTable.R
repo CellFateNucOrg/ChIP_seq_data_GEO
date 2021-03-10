@@ -24,7 +24,7 @@ for(i in 1:length(dataStart)){
   }
   geos<-data1$GEO[grep("GEO",data1$GEO)]
   geos<-gsub("\\s*$","",substring(geos,regexpr("GSM\\d*", geos)))
-  newLine$GEO<-paste0(geos,collapse=",")
+  newLine$GEO<-paste0(geos,collapse=";")
   newLine$antibody<-gsub("\\s*\\d*$","",gsub("\\[ALL\\]\\s\\/","",newLine$antibody))
   newLine[1,]<-t(as.tibble(gsub("\\s*$","",gsub("\\[ALL\\]\\s*$","",newLine))))
   if(is.null(cleanTbl)){
