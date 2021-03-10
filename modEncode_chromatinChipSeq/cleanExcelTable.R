@@ -1,9 +1,9 @@
 library("readxl")
 
 projDir<-getwd()
-workDir<-paste0(projDir,"/modEncode_nonHistone")
+workDir<-paste0(projDir,"/modEncode_chromatinChipSeq")
 
-xl<-read_excel(paste0(workDir,"/modEncode_chromatinChipSeq_nonHistone.xlsx"),
+xl<-read_excel(paste0(workDir,"/modEncode_chromatinChipSeq_mix.xlsx"),
                sheet="Sheet2")
 options(tibble.width = Inf)
 
@@ -13,6 +13,7 @@ dataEnd<-c(dataStart[2:length(dataStart)]-1,nrow(xl))
 cleanTbl<-NULL
 for(i in 1:length(dataStart)){
   data1<-xl[dataStart[i]:dataEnd[i],]
+  data1$`Embargoed until`<-NULL
   colnames(data1)<-c("DCC.id","Name","developmental.stage","antibody",
                      "strain","temperature","GEO")
   newLine<-data1[1,]
@@ -39,5 +40,11 @@ cleanTbl$order<-as.character(1:nrow(cleanTbl))
 cleanTbl<-cleanTbl[,c("order","DCC.id","Name","developmental.stage","antibody",
                      "target","strain","temperature","GEO")]
 
-write.csv(cleanTbl,file=paste0(workDir,"/modEncode_chromatinChipSeq_nonHistone.csv"),
+# some manual cleaning:
+cleanTbl$antibody<-gsub("^C. elegans ","",cleanTbl$antibody)
+cleanTbl$antibody<-gsub(" rabbit polyclonal antibody$","",cleanTbl$antibody)
+cleanTbl$target[c(1,2)]<-sapply(strsplit(cleanTbl$antibody[c(1,2)], "_"),"[",2)
+cleanTbl$developmental.stage<-gsub("DevStageWorm:","",cleanTbl$developmental.stage)
+
+write.csv(cleanTbl,file=paste0(workDir,"/modEncode_chromatinChipSeq_mix.csv"),
           row.names=F)
