@@ -3,14 +3,14 @@ library("tidyverse")
 devStage="L3"
 
 projDir<-getwd()
-workDir<-paste0(projDir,"/modEncode_nonHistone")
+workDir<-paste0(projDir,"/modEncode_chromatinChipSeq")
 
 #########-
 ## Prepare table for chipseq pipeline -----
 #########-
 
 # make SRR file for datasets that have geo
-chipdata<-read.delim(paste0(workDir, "/modEncode_chromatinChipSeq_nonHistone_fullTable.tsv"))
+chipdata<-read.delim(paste0(workDir, "/modEncode_chromatinChipSeq_mix_fullTable.tsv"))
 
 l3<-chipdata[grepl(devStage,chipdata$stage_1) & !is.na(chipdata$name_1),]
 sampleNames<-sapply(strsplit(l3$name_1,";"),"[",1)
@@ -24,6 +24,7 @@ cleanMetadata<-data.frame(modEncodeID=gsub("modENCODE_","mE",l3$DCC.id),
                           antibody=sapply(strsplit(sampleNames,"_"),"[",1),
                           target=sapply(strsplit(sampleNames,"_"),"[",2))
 
+cleanMetadata$sex<-"herm"
 sameTargetGroups<-factor(cleanMetadata$target)
 
 SRRs<-data.frame(input=gsub(";"," ",l3$input),
@@ -32,7 +33,7 @@ SRRs<-data.frame(input=gsub(";"," ",l3$input),
                  group=as.numeric(sameTargetGroups))
 
 
-write.table(SRRs,paste0(projDir,"/SRR_modEncode_chromatinChipSeq_nonHistone.csv"),
+write.table(SRRs,paste0(projDir,"/SRR_modEncode_chromatinChipSeq_mix.csv"),
             sep=";",quote=F,row.names=F)
 
 
@@ -41,7 +42,11 @@ alreadyFetchedSrrs<-c(SRRs$input, SRRs$ip)
 prjna63455<-read.csv2(paste0(projDir,"/SRR_namesPRJNA63455.csv"))
 prjna<-c(unlist(lapply(prjna63455$input,strsplit," ")), unlist(lapply(prjna63455$ip,strsplit," ")))
 
-alreadyFetchedSrrs %in% prjna # all included in previous download PRJNA63455
+alreadyFetchedSrrs %in% prjna # a few included here (4)
+
+# part of PRJNA63461 project
+prjna63461<-read.csv("/Users/semple/Documents/MeisterLab/Datasets/PRJNA63461_functGenomics/PRJNA63461_modencode_functionalGenomics.txt")
+alreadyFetchedSrrs %in% prjna63461$Run # yes, about half
 
 
 #########################-
@@ -63,9 +68,6 @@ ftpdata$modEncodeID<-paste0("mE",ftpdata$modEncodeID)
 idx<-ftpdata$modEncodeID %in% alreadyFetched
 ftpdata<-ftpdata[!idx,]
 
-
-
-
 #load metadata
 ftpmeta<-read.delim(paste0(workDir,"/metadata_otherChrBind.tsv"))
 mEids<-strsplit(ftpmeta$ID,", |and ")
@@ -79,27 +81,28 @@ mEidTbl$modEncodeID<-paste0("mE",mEidTbl$modEncodeID)
 match(ftpdata$modEncodeID, mEidTbl$modEncodeID)
 ftpdata<-left_join(ftpdata,mEidTbl,by="modEncodeID")
 ftpdata<-cbind(ftpdata,ftpmeta[ftpdata$datasetGroup,])
+
 table(ftpdata$Conditions)
+# no L3 data
+
 
 # restrict to l3
-idx<-grep("L3",ftpdata$Conditions)
-l3<-ftpdata[idx,]
+#idx<-grep("L3",ftpdata$Conditions)
+#l3<-ftpdata[idx,]
+# all of them are emb or YA
 
-
-l3ftpWithSrr<-l3$url[grep("SRR\\d*",l3$url)]
-l3ftpWithSrr<-gsub("\\.fastq\\.gz","",substring(l3ftpWithSrr,regexpr("SRR\\d*",l3ftpWithSrr)))
-l3ftpWithSrr %in% alreadyFetchedSrrs # none have been included
-
-# part of PRJNA63461 project
-prjna63461<-read.csv("/Users/semple/Documents/MeisterLab/Datasets/PRJNA63461_functGenomics/PRJNA63461_modencode_functionalGenomics.txt")
-l3ftpWithSrr %in% prjna63461$Run # yes, only one dataset
-#l3ftpWithSrr[!l3ftpWithSrr %in% prjna63461$Run] %in% prjna
-
-
-# and the remaining ones?
-# find mE ids of ones with srr in order to remove them
-mEinPrjna<-unique(l3$modEncodeID[grep("SRR\\d*",l3$url)])
-
-l3noSrr<-l3[! l3$modEncodeID %in% mEinPrjna,]
-l3noSrr
-# no datasets left
+# l3ftpWithSrr<-l3$url[grep("SRR\\d*",l3$url)]
+# l3ftpWithSrr<-gsub("\\.fastq\\.gz","",substring(l3ftpWithSrr,regexpr("SRR\\d*",l3ftpWithSrr)))
+# l3ftpWithSrr %in% alreadyFetchedSrrs # none have been included
+#
+# # part of PRJNA63461 project
+# prjna63461<-read.csv("/Users/semple/Documents/MeisterLab/Datasets/PRJNA63461_functGenomics/PRJNA63461_modencode_functionalGenomics.txt")
+# l3ftpWithSrr %in% prjna63461$Run # none have been included
+# #l3ftpWithSrr[!l3ftpWithSrr %in% prjna63461$Run] %in% prjna
+#
+# # and the remaining ones?
+# # find mE ids of ones with srr in order to remove them
+# mEinPrjna<-unique(l3$modEncodeID[grep("SRR\\d*",l3$url)])
+#
+# l3noSrr<-l3[! l3$modEncodeID %in% mEinPrjna,]
+n

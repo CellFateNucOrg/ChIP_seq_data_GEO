@@ -32,7 +32,7 @@ SRRs<-data.frame(input=gsub(";"," ",l3$input),
                  group=as.numeric(sameTargetGroups))
 
 
-write.table(SRRs,paste0(projDir,"/modEncode_chromatinChipSeq_modHistone.csv"),
+write.table(SRRs,paste0(projDir,"/SRR_modEncode_chromatinChipSeq_modHistone.csv"),
             sep=";",quote=F,row.names=F)
 
 

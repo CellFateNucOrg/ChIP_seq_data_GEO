@@ -1,0 +1,80 @@
+ Dataset	Organism	Technique	Target Element	Assay Factor	Conditions	PI	ID
+ ASH-2;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	ASH-2	Embryos mixed stages 20 degree celsius	Lieb, J.	6291
+ DPL-1;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	DPL-1	Larvae L3 stage 20 degree celsius	Lieb, J.	3575
+ DPL-1;Late Embryonic stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	DPL-1	Late Embryonic stage 20 degree celsius	Lieb, J.	3935
+ EFL-1;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	EFL-1	Larvae L3 stage 20 degree celsius	Lieb, J.	3577
+ EFL-1;Late Embryonic stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	EFL-1	Late Embryonic stage 20 degree celsius	Lieb, J.	3934
+ EPC-1;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	EPC-1	Larvae L3 stage 20 degree celsius	Lieb, J.	3573
+ H2AK5ac;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H2AK5ac	Germline containing Young adult 20 degree celsius	Lieb, J.	5252
+ H3;Ab:AB1791 H3 :JL:1;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3	Early Embryos 20 degree celsius	Lieb, J.	5031
+ H3;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3	Larvae L3 stage 20 degree celsius	Lieb, J.	3564
+ H3;N2;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3	Larvae L3 stage 20 degree celsius	Lieb, J.	3562
+ H3K14ac;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K14ac	Germline containing Young adult 20 degree celsius	Lieb, J.	5174
+ H3K18ac;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K18ac	Early Embryos 20 degree celsius	Lieb, J.	5152
+ H3K18ac;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K18ac	Larvae L3 stage 20 degree celsius	Lieb, J.	5046
+ H3K23ac;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K23ac	Early Embryos 20 degree celsius	Lieb, J.	5151
+ H3K23ac;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K23ac	Larvae L3 stage 20 degree celsius	Lieb, J.	5053
+ H3K27ac;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K27ac	Early Embryos 20 degree celsius	Lieb, J.	5159
+ H3K27ac;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K27ac	Germline containing Young adult 20 degree celsius	Lieb, J.	3921
+ H3K27ac;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K27ac	Larvae L3 stage 20 degree celsius	Lieb, J.	5054
+ H3K27me1;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K27me1	Early Embryos 20 degree celsius	Lieb, J.	5160
+ H3K27me1;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K27me1	Larvae L3 stage 20 degree celsius	Lieb, J.	5044
+ H3K27me3;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K27me3	Early Embryos 20 degree celsius	Lieb, J.	5163
+ H3K27me3;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K27me3	Germline containing Young adult 20 degree celsius	Lieb, J.	6254
+ H3K27me3;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K27me3	Larvae L3 stage 20 degree celsius	Lieb, J.	5045 and 5051
+ H3K36ac;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K36ac	Larvae L3 stage 20 degree celsius	Lieb, J.	5043
+ H3K36me1;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K36me1	Early Embryos 20 degree celsius	Lieb, J.	5167
+ H3K36me1;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K36me1	Germline containing Young adult 20 degree celsius	Lieb, J.	6244
+ H3K36me1;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K36me1	Larvae L3 stage 20 degree celsius	Lieb, J.	5049
+ H3K36me2;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K36me2	Early Embryos 20 degree celsius	Lieb, J.	5164
+ H3K36me2;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K36me2	Larvae L3 stage 20 degree celsius	Lieb, J.	5041
+ H3K36me3;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K36me3	Early Embryos 20 degree celsius	Lieb, J.	5165
+ H3K36me3;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K36me3	Germline containing Young adult 20 degree celsius	Lieb, J.	6256
+ H3K36me3;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K36me3	Larvae L3 stage 20 degree celsius	Lieb, J.	3563
+ H3K4me1;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K4me1	Early Embryos 20 degree celsius	Lieb, J.	5158
+ H3K4me1;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Non TF Chromatin binding factor and Histone Modification	H3K4me1	Germline containing Young adult 20 degree celsius	Lieb, J.	5245 and 6246
+ H3K4me1;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K4me1	Larvae L3 stage 20 degree celsius	Lieb, J.	5048
+ H3K4me2;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K4me2	Early Embryos 20 degree celsius	Lieb, J.	5157
+ H3K4me2;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K4me2	Larvae L3 stage 20 degree celsius	Lieb, J.	5055
+ H3K4me3;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K4me3	Early Embryos 20 degree celsius	Lieb, J.	5166
+ H3K4me3;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K4me3	Larvae L3 stage 20 degree celsius	Lieb, J.	3576
+ H3K79me1;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K79me1	Early Embryos 20 degree celsius	Lieb, J.	5168
+ H3K79me2;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K79me2	Early Embryos 20 degree celsius	Lieb, J.	5169
+ H3K79me2;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K79me2	Larvae L3 stage 20 degree celsius	Lieb, J.	5047
+ H3K79me3;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K79me3	Early Embryos 20 degree celsius	Lieb, J.	5170
+ H3K79me3;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K79me3	Germline containing Young adult 20 degree celsius	Lieb, J.	5173
+ H3K79me3;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K79me3	Larvae L3 stage 20 degree celsius	Lieb, J.	5032
+ H3K9acetyl;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K9acetyl	Larvae L3 stage 20 degree celsius	Lieb, J.	3578
+ H3K9acS10ph;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K9acS10ph	Early Embryos 20 degree celsius	Lieb, J.	5149
+ H3K9acS10ph;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K9acS10ph	Larvae L3 stage 20 degree celsius	Lieb, J.	5988
+ H3K9me1;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K9me1	Early Embryos 20 degree celsius	Lieb, J.	5171
+ H3K9me1;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K9me1	Larvae L3 stage 20 degree celsius	Lieb, J.	5036
+ H3K9me2;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K9me2	Early Embryos 20 degree celsius	Lieb, J.	5161
+ H3K9me2;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K9me2	Larvae L3 stage 20 degree celsius	Lieb, J.	5050
+ H3K9me3;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K9me3	Early Embryos 20 degree celsius	Lieb, J.	5153, 5154, and 5155
+ H3K9me3;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3K9me3	Larvae L3 stage 20 degree celsius	Lieb, J.	5037 and 5040
+ H3S10ph;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H3S10ph	Germline containing Young adult 20 degree celsius	Lieb, J.	5244
+ H4acTetra;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H4acTetra	Larvae L3 stage 20 degree celsius	Lieb, J.	3572
+ H4K20me1;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H4K20me1	Embryos mixed stages 20 degree celsius	Lieb, J.	6210
+ H4K20me1;TY1072;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H4K20me1	Embryos mixed stages 20 degree celsius	Lieb, J.	6211
+ H4K8ac;Early Embryos;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H4K8ac	Early Embryos 20 degree celsius	Lieb, J.	5162
+ H4K8ac;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	H4K8ac	Germline containing Young adult 20 degree celsius	Lieb, J.	6009
+ HIM-17;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	HIM-17	Germline containing Young adult 20 degree celsius	Lieb, J.	3916
+ HIM-3;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	HIM-3	Germline containing Young adult 20 degree celsius	Lieb, J.	5236 and 5240
+ HIM-8;fem-2(b245);Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	HIM-8	Germline containing Young adult 20 degree celsius	Lieb, J.	5199
+ LIN-35;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	LIN-35	Larvae L3 stage 20 degree celsius	Lieb, J.	3570
+ LIN-35;Late Embryonic stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	LIN-35	Late Embryonic stage 20 degree celsius	Lieb, J.	3925
+ LIN-37;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	LIN-37	Larvae L3 stage 20 degree celsius	Lieb, J.	3566
+ LIN-37;Late Embryonic stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	LIN-37	Late Embryonic stage 20 degree celsius	Lieb, J.	3928
+ LIN-52;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	LIN-52	Larvae L3 stage 20 degree celsius	Lieb, J.	3565
+ LIN-52;Late Embryonic stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	LIN-52	Late Embryonic stage 20 degree celsius	Lieb, J.	3930
+ LIN-54;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	LIN-54	Larvae L3 stage 20 degree celsius	Lieb, J.	3567
+ LIN-54;Late Embryonic stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	LIN-54	Late Embryonic stage 20 degree celsius	Lieb, J.	3932
+ LIN-9;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	LIN-9	Larvae L3 stage 20 degree celsius	Lieb, J.	3568
+ LIN-9;Late Embryonic stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	LIN-9	Late Embryonic stage 20 degree celsius	Lieb, J.	3924
+ MYS-3;Larvae L3 stage;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	MYS-3	Larvae L3 stage 20 degree celsius	Lieb, J.	6002
+ NASP-1;YPT41;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	NASP-1	Embryos mixed stages 20 degree celsius	Lieb, J.	6011
+ RPC-1;N2;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	RPC-1	Embryos mixed stages 20 degree celsius	Lieb, J.	3581
+ SFC-1;N2;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	SFC-1	Embryos mixed stages 20 degree celsius	Lieb, J.	3580
+ TAG315;Embryos mixed stages;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	TAG315	Embryos mixed stages 20 degree celsius	Lieb, J.	3579
+ ZYG-12;WH223;Germline containing Young adult;20 degree celsius;ChIP-seq	C. elegans	ChIP-seq	Histone Modification	ZYG-12	Germline containing Young adult 20 degree celsius	Lieb, J.	5251, 5253, and 6325
