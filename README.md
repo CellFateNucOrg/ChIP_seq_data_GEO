@@ -51,7 +51,7 @@ Not all modencode data has an associated GEO ID. But the modencode ftp site is t
 
 3. To get SRR names from GEO ids, used the reutils package, see the script **getSRRfromGSM.R**. The input is the modEncode_chromatinChipSeq_modHistone.csv file and the output is modEncode_chromatinChipSeq_modHistone_fullTable.tsv file with both GEO numbers and SRR numbers. This table is left with multiple similar columns in order to be sure that there is no mixup in the samples (i.e. the metadata downloaded with the SRR numbers (designaated withh _1 in the column name) is the same as that found with the GEO numbers.
 
-4. To construct appropriate input table for the pipeline, use the **makeSRRtable.R** script. Output is the SRR_names_modEncode_GEO.csv file, which is added to the repository.
+4. To construct appropriate input table for the pipeline, use the **makeSRRtable.R** script. Output are the **SRR_modEncode_chromatinChipSeq_modHistone.csv** **SRR_modEncode_chromatinChipSeq_nonHistone.csv**, and **SRR_modEncode_chromatinChipSeq_mix.csv** files, which are added to the top level of the repository.
 
 ## Getting data from ftp server
 1. To get data from ftp site click on the "Dataset" button on the main modencode page http://www.modencode.org, and then select criteria on the left hand side: 
