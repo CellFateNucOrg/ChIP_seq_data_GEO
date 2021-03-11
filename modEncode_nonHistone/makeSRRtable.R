@@ -22,13 +22,16 @@ cleanMetadata<-data.frame(modEncodeID=gsub("modENCODE_","mE",l3$DCC.id),
                           sex=gsub("mixed Male and Hermaphrodite.*$",
                                    "maleherm",l3$sex_1),
                           antibody=sapply(strsplit(sampleNames,"_"),"[",1),
-                          target=sapply(strsplit(sampleNames,"_"),"[",2))
+                          target=sapply(strsplit(sampleNames,"_"),"[",2),
+                          replicate=l3$replicate_1)
 
 sameTargetGroups<-factor(cleanMetadata$target)
 
 SRRs<-data.frame(input=gsub(";"," ",l3$input),
                  ip=gsub(";"," ",l3$ip),
-                 name=with(cleanMetadata,paste(target,modEncodeID,strain,stage,sex,antibody,sep="_")),
+                 name=with(cleanMetadata,paste(target,strain,stage,sex,
+                                               replicate,antibody,modEncodeID,
+                                               sep="_")),
                  group=as.numeric(sameTargetGroups))
 
 
