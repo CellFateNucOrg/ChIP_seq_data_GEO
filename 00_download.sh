@@ -51,7 +51,7 @@ do
    fi
    echo "compressing fastq with gzip."
    gzip $working_path/$SRR_exp/SRR_download/IP/${i}.fastq
-   echo "${SRR_exp};${i};${spots}" >> $working_path/spotCounts.tsv
+   echo "${SRR_exp};IP;${i};${spots}" >> $working_path/spotCounts.tsv
 done
 
 
@@ -84,7 +84,7 @@ do
 
    echo "compressing fastq with gzip."
    gzip $working_path/$SRR_exp/SRR_download/input/${i}.fastq
-   echo "${SRR_exp};${i};${spots}" >> $working_path/spotCounts.tsv
+   echo "${SRR_exp};input;${i};${spots}" >> $working_path/spotCounts.tsv
 done
 
 echo "This is over"
