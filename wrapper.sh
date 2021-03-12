@@ -9,6 +9,8 @@ line_number=$1
 echo $SRR_line_number
 nThreads=$2
 echo $nThreads threads used per task
+slurmOutFile=$3
+echo $slurmOutFile is slurm output file
 
 #create folder for SRR download if it does not exists
 #$(awk -F ',' 'NR=="'SRR_line_number'"' '{printf"%s",$1$3}' $file_name | tr -d '"')
@@ -30,7 +32,7 @@ echo "-------------------------------"
 [ ! -d $working_path/$SRR_exp ] && mkdir $working_path/$SRR_exp
 
 echo "Now downloading data from GEO..."
-bash 00_download.sh $SRR_exp "$SRR_IP" "$SRR_input" $nThreads
+bash 00_download.sh $SRR_exp $SRR_IP $SRR_input $nThreads $slurmOutFile
 
 #echo "Now trimming fastq files..."
 #bash 01_trimming.sh $SRR_exp $nThreads

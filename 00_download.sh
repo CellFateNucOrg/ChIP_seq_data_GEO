@@ -8,6 +8,7 @@ SRR_exp=$1
 SRR_IP=($2)
 SRR_input=($3)
 nThreads=$4
+slurmOutFile=$5
 
 echo $SRR_exp experiment
 echo $SRR_IP IP
@@ -20,57 +21,70 @@ rm -rf $working_path/$SRR_exp/SRR_download/*
 [ ! -d $working_path/$SRR_exp/SRR_download/input ] && mkdir $working_path/$SRR_exp/SRR_download/input
 
 mkdir -p /scratch/meisterLab
-echo "\nDownloading IP: $SRR_IP"
+touch $working_path/spotCounts.tsv
+echo ""
+echo "Downloading IP: $SRR_IP"
 for i in "${SRR_IP[@]}"
 do
    echo $i
-   prefetch -o $working_path/$SRR_exp/SRR_download/$i.srr $i
-   vdb-validate $working_path/$SRR_exp/SRR_download/$i.srr
+   prefetch -o $working_path/$SRR_exp/SRR_download/$i $i
+   vdb-validate $working_path/$SRR_exp/SRR_download/$i
    if [ $? -ne 0  ]
    then
 	echo "trying fasterq on its own"
 	fasterq-dump -O $working_path/$SRR_exp/SRR_download/IP -t /scratch/meisterLab/$SRR_exp -e $nThreads $i
    else
    	echo "running fasterq with prefetch"
-   	fasterq-dump -O $working_path/$SRR_exp/SRR_download/IP -t /scratch/meisterLab/$SRR_exp -e $nThreads $working_path/$SRR_exp/SRR_download/$i.srr
+   	fasterq-dump -O $working_path/$SRR_exp/SRR_download/IP -t /scratch/meisterLab/$SRR_exp -e $nThreads $working_path/$SRR_exp/SRR_download/$i
    fi
 
-   vdb-validate $working_path/$SRR_exp/SRR_download/IP/${i}.srr.fastq
+   vdb-validate $working_path/$SRR_exp/SRR_download/IP/${i}.fastq
    if [ $? -ne 0 ]
    then
    	echo "dowload failed. trying fastq-dump"
 	fastq-dump -O $working_path/$SRR_exp/SRR_download/IP $i
+	spots=$(tac $slurmOutFile | grep -m 1 "Read .* spots")
+	echo $spots
+   else
+   	spots=$(tac $slurmOutFile | grep -m 1 "spots read")
+	echo $spots
    fi
-
    echo "compressing fastq with gzip."
-   gzip $working_path/$SRR_exp/SRR_download/IP/${i}.srr.fastq
- 
+   gzip $working_path/$SRR_exp/SRR_download/IP/${i}.fastq
+   echo "${SRR_exp};${i};${spots}" >> $working_path/spotCounts.tsv
 done
 
 
-echo "\nDownloading input: $SRR_input"
+echo ""
+echo "Downloading input: $SRR_input"
 for i in "${SRR_input[@]}"
 do
-   prefetch -o $working_path/$SRR_exp/SRR_download/$i.srr $i
-   vdb-validate $working_path/$SRR_exp/SRR_download/$i.srr
+   prefetch -o $working_path/$SRR_exp/SRR_download/$i $i
+   vdb-validate $working_path/$SRR_exp/SRR_download/$i
    if [ $? -ne 0  ]
    then
        echo "trying fasterq on its own"
        fasterq-dump -O $working_path/$SRR_exp/SRR_download/input -t /scratch/meisterLab/$SRR_exp -e $nThreads $i
    else
        echo "running fasterq with prefetch"
-       fasterq-dump -O $working_path/$SRR_exp/SRR_download/input -t /scratch/meisterLab/$SRR_exp -e $nThreads $working_path/$SRR_exp/SRR_download/$i.srr
+       fasterq-dump -O $working_path/$SRR_exp/SRR_download/input -t /scratch/meisterLab/$SRR_exp -e $nThreads $working_path/$SRR_exp/SRR_download/$i
    fi
-   vdb-validate $working_path/$SRR_exp/SRR_download/input/${i}.srr.fastq
+   vdb-validate $working_path/$SRR_exp/SRR_download/input/${i}.fastq
    
    if [ $? -ne 0 ]
    then
    	echo "download failed. trying fastq-dump"
 	fastq-dump -O $working_path/$SRR_exp/SRR_download/IP $i
+   	spots=$(tac $slurmOutFile | grep -m 1 "Read .* spots")
+	echo $spots
+   else
+   	spots=$(tac $slurmOutFile | grep -m 1 "spots read")
+	echo $spots
    fi
 
    echo "compressing fastq with gzip."
-   gzip $working_path/$SRR_exp/SRR_download/input/${i}.srr.fastq
+   gzip $working_path/$SRR_exp/SRR_download/input/${i}.fastq
+   echo "${SRR_exp};${i};${spots}" >> $working_path/spotCounts.tsv
 done
 
 echo "This is over"
