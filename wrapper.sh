@@ -31,24 +31,24 @@ echo "-------------------------------"
 #create folder for SRR download
 [ ! -d $working_path/$SRR_exp ] && mkdir $working_path/$SRR_exp
 
-echo "Now downloading data from GEO..."
-bash 00_download.sh $SRR_exp $SRR_IP $SRR_input $nThreads $slurmOutFile
+#echo "Now downloading data from GEO..."
+#bash 00_download.sh $SRR_exp $SRR_IP $SRR_input $nThreads $slurmOutFile
 
-#echo "Now trimming fastq files..."
-#bash 01_trimming.sh $SRR_exp $nThreads
-#
-#echo "Now mapping fastq files using bowtie2..."
-#bash 02_map.sh $SRR_exp $nThreads
-#
-#echo "Now sorting mapped files..."
-#bash 03_sort.sh $SRR_exp $nThreads
-#
-#echo "Now deduplicating files using picard..."
-#bash 04_dedup.sh $SRR_exp $nThreads
-#
-#echo "Now calculating enrichment..."
-#bash 05_normalize.sh $SRR_exp $nThreads
-#
+echo "Now trimming fastq files..."
+bash 01_trimming.sh $SRR_exp $nThreads
+
+echo "Now mapping fastq files using bowtie2..."
+bash 02_map.sh $SRR_exp $nThreads
+
+echo "Now sorting mapped files..."
+bash 03_sort.sh $SRR_exp $nThreads
+
+echo "Now deduplicating files using picard..."
+bash 04_dedup.sh $SRR_exp $nThreads
+
+echo "Now calculating enrichment..."
+bash 05_normalize.sh $SRR_exp
+
 #echo "Cleaning up..."
 #cd $working_path/$SRR_exp
 #rm -r dedup

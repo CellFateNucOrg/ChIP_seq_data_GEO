@@ -21,7 +21,7 @@ rm -rf $working_path/$SRR_exp/SRR_download/*
 [ ! -d $working_path/$SRR_exp/SRR_download/input ] && mkdir $working_path/$SRR_exp/SRR_download/input
 
 mkdir -p /scratch/meisterLab
-touch $working_path/spotCounts.tsv
+touch $working_path/spotCounts.csv
 echo ""
 echo "Downloading IP: $SRR_IP"
 for i in "${SRR_IP[@]}"
@@ -51,7 +51,7 @@ do
    fi
    echo "compressing fastq with gzip."
    gzip $working_path/$SRR_exp/SRR_download/IP/${i}.fastq
-   echo "${SRR_exp};IP;${i};${spots}" >> $working_path/spotCounts.tsv
+   echo "${SRR_exp};IP;${i};${spots}" >> $working_path/spotCounts.csv
 done
 
 
@@ -84,7 +84,7 @@ do
 
    echo "compressing fastq with gzip."
    gzip $working_path/$SRR_exp/SRR_download/input/${i}.fastq
-   echo "${SRR_exp};input;${i};${spots}" >> $working_path/spotCounts.tsv
+   echo "${SRR_exp};input;${i};${spots}" >> $working_path/spotCounts.csv
 done
 
 echo "This is over"
