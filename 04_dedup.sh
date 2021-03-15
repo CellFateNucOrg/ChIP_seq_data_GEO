@@ -1,10 +1,12 @@
 #!/bin/bash
 module add UHTS/Analysis/picard-tools/2.21.8;
 module add UHTS/Analysis/samtools/1.8;
+module add UHTS/Analysis/MultiQC/1.8;
 SRR_exp=$1
 nThreads=$2
 [ ! -d $working_path/$SRR_exp/dedup ] &&  mkdir $working_path/$SRR_exp/dedup
 [ ! -d "$working_path/$SRR_exp/filt" ] &&  mkdir $working_path/$SRR_exp/filt
+[ ! -d $working_path/qc ] && mkdir $working_path/qc
 
 FILES=$(find $working_path/$SRR_exp/bam/ -type f -name "*_sorted.bam")
 for f in $FILES
@@ -27,17 +29,23 @@ for f in $FILES
     fi
     #-q 1 option removes multimappers assigned 0 by bwa aln
     samtools view -u -q 1 -@ $nThreads $working_path/$SRR_exp/dedup/${target_name}_dedup.bam | samtools view  -b -@ $nThreads -L ${genome_location}/ce11-blacklist.v2.bed -U $working_path/$SRR_exp/filt/${target_name}_dedup_filt.bam  -o $working_path/$SRR_exp/filt/${target_name}_dedup_blacklisted.bam  -
-    rm $working_path/$SRR_exp/filt/${target_name}_dedup_blacklisted.bam
 
     echo "Sorting deduplicated $f"
     samtools sort -@ $nThreads -o $working_path/$SRR_exp/filt/${target_name}_dedup_filt_sorted.bam  $working_path/$SRR_exp/filt/${target_name}_dedup_filt.bam 
 
     echo "Indexing deduplicated $f"
     samtools index -@ $nThreads $working_path/$SRR_exp/filt/${target_name}_dedup_filt_sorted.bam
+
+    multiqc -i $SRR_exp -o $working_path/qc  $working_path/$SRR_exp
+    #cleanup
+    rm $working_path/$SRR_exp/filt/${target_name}_dedup_blacklisted.bam
     rm $working_path/$SRR_exp/dedup/${target_name}_dedup.bam
     rm $working_path/$SRR_exp/filt/${target_name}_dedup_filt.bam
   fi
 done
 
+
+
 module rm UHTS/Analysis/picard-tools/2.21.8;
 module rm UHTS/Analysis/samtools/1.8;
+module rm UHTS/Analysis/MultiQC/1.8;
