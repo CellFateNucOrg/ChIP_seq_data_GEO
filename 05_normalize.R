@@ -18,9 +18,9 @@ print(args)
 working_dir<-args[1]
 exp_name<-basename(working_dir)
 setwd(working_dir)
-print(working_dir
+print(working_dir)
 read_depth <- matrix(nrow=2, ncol=1)
-filenames <- list.files(path=paste0(working_dir,"/filt/", pattern="*_trimmed_sorted_dedup_filt_sorted.bam$")
+filenames <- list.files(path=paste0(working_dir,"/filt/"), pattern="*_trimmed_sorted_dedup_filt_sorted.bam$")
 print(filenames)
 #RPM calculations, calculate for each position the coverage, with no pseudocount
 for (i in (1:length(filenames)))
@@ -55,16 +55,28 @@ write.table(read_depth,("./norm/Sequencing_depth.txt"))
 
 #Substract normalized mapped read counts at each position
 #Load paired input/IP RPM bigwig tracks
-input <-import(paste0(working_dir,"/norm/input_trimmed_sorted_dedup_sorted_no_pseudo_ext200_norm.bw"))
+input <-import(paste0(working_dir,"/norm/input_trimmed_sorted_dedup_filt_sorted_no_pseudo_ext200_norm.bw"))
 print("Input loaded")
-ChIP <- import(paste0(working_dir,"/norm/IP_trimmed_sorted_dedup_sorted_no_pseudo_ext200_norm.bw"))
+seqlevels(input)<-seqlevels(genome) # make sure levels are in same order
+seqinfo(input)<-seqinfo(genome) #add circular and genome version data
+print(paste0(sum(is.na(input$score))," NAs in input"))
+print(sapply(mcolAsRleList(input,"score"),length)==seqlengths(genome))
+
+ChIP <- import(paste0(working_dir,"/norm/IP_trimmed_sorted_dedup_filt_sorted_no_pseudo_ext200_norm.bw"))
 print("IP loaded")  
-#Calculate enrichment by substracting input to IP 
+seqlevels(ChIP)<-seqlevels(genome)
+seqinfo(ChIP)<-seqinfo(genome)
+print(paste0(sum(is.na(ChIP$score))," NAs in ChIP"))
+print(sapply(mcolAsRleList(ChIP,"score"),length)==seqlengths(genome))
+
+#Calculate enrichment by substracting input from IP 
 enrichment <- (mcolAsRleList(ChIP,"score"))-(mcolAsRleList(input,"score"))
 #Transform RleList into GRange
 enrichment <- bindAsGRanges(enrichment)
 #Change mcol name for saving as bigwig
 names(mcols(enrichment))<-"score"
+print(paste0(sum(is.na(enrichment$score))," NAs in input"))
+
 #Save track as bigwig in ./enrichment
 #export.bw(enrichment, paste0(working_dir,"/enrichment/ChIP_enrichment_substract_norm_",rev(unlist(strsplit(working_dir,"/")))[1],".bw"))
 export.bw(enrichment, paste0(working_dir,"/enrichment/ChIP_enrichment_substract_norm_",exp_name,".bw"))
