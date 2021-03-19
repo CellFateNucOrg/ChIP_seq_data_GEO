@@ -8,6 +8,8 @@ nThreads=$2
 [ ! -d "$working_path/$SRR_exp/filt" ] &&  mkdir $working_path/$SRR_exp/filt
 [ ! -d $working_path/qc ] && mkdir $working_path/qc
 
+source $CONDA_ACTIVATE
+
 FILES=$(find $working_path/$SRR_exp/bam/ -type f -name "*_sorted.bam")
 for f in $FILES
   do
@@ -35,7 +37,12 @@ for f in $FILES
 
     echo "Indexing deduplicated $f"
     samtools index -@ $nThreads $working_path/$SRR_exp/filt/${target_name}_dedup_filt_sorted.bam
-
+    
+    if [ -d $working_path/qc/$SRR_exp_multiqc_report_data ]
+    then
+      rm -r $working_path/qc/$SRR_exp_multiqc_report_data
+      rm $working_path/qc/$SRR_exp_multiqc_report.html
+    fi
     multiqc -i $SRR_exp -o $working_path/qc  $working_path/$SRR_exp
     #cleanup
     rm $working_path/$SRR_exp/filt/${target_name}_dedup_blacklisted.bam

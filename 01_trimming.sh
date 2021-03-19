@@ -10,6 +10,9 @@ echo "IP files: $SRR_IP"
 cat $SRR_input > $working_path/$SRR_exp/SRR_download/input/input.fq.gz
 cat $SRR_IP > $working_path/$SRR_exp/SRR_download/IP/IP.fq.gz
 
+rm $SRR_input
+rm $SRR_IP
+
 [ ! -d "$working_path/$SRR_exp/trimmed_fq" ] && mkdir $working_path/$SRR_exp/trimmed_fq
 FILES=$(find $working_path/$SRR_exp/SRR_download/ -type f -name "*.fq.gz")
 echo $FILES
@@ -26,5 +29,12 @@ do
    echo "Trimmed $f already present"
  fi
 done
+
+# move qc data to the qc directory
+[ ! -d "$working_path/qc/$SRR_exp" ] && mkdir $working_path/qc/$SRR_exp
+mv $working_path/$SRR_exp/trimmed_fq/*_trimmed_fastqc.html $working_path/qc/$SRR_exp/
+mv $working_path/$SRR_exp/trimmed_fq/*_trimming_report.txt $working_path/qc/$SRR_exp/
+mv $working_path/$SRR_exp/trimmed_fq/*_trimmed_fastqc.zip $working_path/qc/$SRR_exp/
+
 module rm UHTS/Quality_control/cutadapt/2.5;
 module rm UHTS/Quality_control/fastqc/0.11.7;

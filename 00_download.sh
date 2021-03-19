@@ -53,6 +53,9 @@ do
    echo "compressing fastq with gzip."
    gzip $working_path/$SRR_exp/SRR_download/IP/${i}.fastq
    echo "${SRR_exp};IP;${i};${spots}" >> $working_path/qc/spotCounts.csv
+   
+   #clean up
+   rm $working_path/$SRR_exp/SRR_download/${i}*
 done
 
 
@@ -86,6 +89,9 @@ do
    echo "compressing fastq with gzip."
    gzip $working_path/$SRR_exp/SRR_download/input/${i}.fastq
    echo "${SRR_exp};input;${i};${spots}" >> $working_path/qc/spotCounts.csv
+   
+   #clean up
+   rm $working_path/$SRR_exp/SRR_download/${i}*
 done
 
 echo "This is over"

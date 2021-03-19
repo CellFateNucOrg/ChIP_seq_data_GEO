@@ -51,9 +51,12 @@ bash 05_normalize.sh $SRR_exp
 
 #echo "Cleaning up..."
 #cd $working_path/$SRR_exp
-#rm -r dedup
 #rm -r SRR_download
-#rm trimmed_fq/*.fq.gz
+#rm -r trimmed_fq
 #rm -r bam
+#rm -r dedup
+#rm -r filt
+#rm -r norm
+#rm -r enrichment
 #cd $working_path/
 echo "This is over"
