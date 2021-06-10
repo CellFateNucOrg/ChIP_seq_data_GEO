@@ -32,7 +32,7 @@ echo "-------------------------------"
 [ ! -d $working_path/$SRR_exp ] && mkdir $working_path/$SRR_exp
 
 #echo "Now downloading data from GEO..."
-#bash 00_download.sh $SRR_exp $SRR_IP $SRR_input $nThreads $slurmOutFile
+bash 00_download.sh $SRR_exp $SRR_IP $SRR_input $nThreads $slurmOutFile
 
 echo "Now trimming fastq files..."
 bash 01_trimming.sh $SRR_exp $nThreads
