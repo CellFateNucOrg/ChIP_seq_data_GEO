@@ -2,7 +2,7 @@
 
 # file with list of fastq files to process (input;IP;exp_name;group)
 script_path="$(pwd)"
-export list_file_name=${script_path}/SRR_modEncode_chromatinChipSeq_modHistone.csv
+export list_file_name=${script_path}/SRR_namesGSE45678kranz.csv
 
 # directry in which to put all intermediate steps of analysis
 export working_path="$(dirname "$(pwd)")"/tmpRun
