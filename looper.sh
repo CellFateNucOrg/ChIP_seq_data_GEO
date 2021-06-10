@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --mail-user=jennifer.semple@izb.unibe.ch
+#SBATCH --mail-user=bolaji.isiaka@izb.unibe.ch
 #SBATCH --mail-type=end,fail
-#SBATCH --array=1-34%10
+#SBATCH --array=1-38%10
 #SBATCH --job-name="ChIP_seq_modENCODE"
 #SBATCH --partition=pshort
 #SBATCH --time=0-03:00:00
