@@ -29,7 +29,7 @@ echo "input SRR: $SRR_input"
 echo "IP SRR: $SRR_IP"
 echo "-------------------------------"
 #create folder for SRR download
-[ ! -d $working_path/$SRR_exp ] && mkdir $working_path/$SRR_exp
+[ ! -d $working_path ] && mkdir $working_path
 
 #echo "Now downloading data from GEO..."
 bash 00_download.sh $SRR_exp $SRR_IP $SRR_input $nThreads $slurmOutFile
@@ -43,14 +43,14 @@ bash 02_map.sh $SRR_exp $nThreads
 echo "Now sorting mapped files..."
 bash 03_sort.sh $SRR_exp $nThreads
 
-echo "Now deduplicating files using picard..."
+echo "Now deduplicating files using picard and filtering blacklisted..."
 bash 04_dedup.sh $SRR_exp $nThreads
 
-echo "Now calculating enrichment..."
-bash 05_normalize.sh $SRR_exp
+#echo "Now calculating enrichment..."
+#bash 05_normalize.sh $SRR_exp
 
 #echo "Cleaning up..."
-#cd $working_path/$SRR_exp
+#cd $working_path
 #rm -r SRR_download
 #rm -r trimmed_fq
 #rm -r bam
