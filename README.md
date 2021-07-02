@@ -34,9 +34,20 @@ To use this script, you will need to modify 3 files.
 All set? Run with sbatch **looper.sh**
 The scripts outputs an enrichment (normalized RPM IP - normalized RPM input; in the enrichment folder, bw format), plus a normalized bw for IP and input (for checking purposes) 
 
+# GEO datasets of interest
+## GSE45678 data from Kranz _et al._(2013)
+Embryo data from the following paper: Kranz AL et al., "Genome-wide analysis of condensin binding in Caenorhabditis elegans.", Genome Biol, 2013;14(10):R112
+can be processed using the **SRR_namesGSE45678kranz.csv** file. **TODO**: get L3 data!
+
+## GSE67650 data from Kramer _et al._(2015)
+L3 data from the following paper:Kramer M, Kranz AL, Su A, Winterkorn LH et al. Developmental Dynamics of X-Chromosome Dosage Compensation by the DCC and H4K20me1 in C. elegans. PLoS Genet 2015 Dec;11(12):e1005698 can be processed using the **SRR_namesGSE67650kramer.csv** file. **TODO**: get embryo data!
+
+## PRJNA63455 - modEncode project
+Most epigenetic ChIP (but not all?) in the modEncode datasets are part of GEO Bioproject PRJNA63455. The full table of data was downloaded from SRR selector, and processed in R to find L3 datasets. The **SRR_namesPRJNA63455.csv** file contains SRR numbers for these datasets.
 
 # modENCODE data
 Not all modencode data has an associated GEO ID. But the modencode ftp site is terrible at providing metadata, and you have to guess from the often messy names. Also, the metadata on modENCODE is not as precise as that found via GEO, for instance, many histone marks just say "L3" and one might assume these are hermaphrodites only, but if you look at the annotation on GEO you see that these are mixed male and female hermaphrodites). So when possible we want to get the GEO accessions and download metadata, and for those that fail, we want to get data via ftp directly from modENCODE and get any metadata possible. 
+**TODO**: compare SRRs obtained via modencode and via PRJNA63455.
 
 ## Getting data with GEO ID
 1. From the main website of modENCONDE, navigate to the project you are interested in http://www.modencode.org, which will take you to the intermine site. I manually copied the html table to Excel for the following experiments: 
