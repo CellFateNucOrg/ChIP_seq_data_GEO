@@ -21,9 +21,9 @@ SRR_exps=(`cut -f3 -d";" $list_file_name`)
 SRR_IPs=(`cut -f2 -d";" $list_file_name`)
 SRR_inputs=(`cut -f1 -d";" $list_file_name`)
 
-SRR_exp=${SRR_exps[line_number]}
-SRR_IP=${SRR_IPs[line_number]}
-SRR_input=${SRR_inputs[line_number]}
+SRR_exp=${SRR_exps[$line_number]}
+SRR_IP=${SRR_IPs[$line_number]}
+SRR_input=${SRR_inputs[$line_number]}
 echo "Experiment name $SRR_exp"
 echo "input SRR: $SRR_input"
 echo "IP SRR: $SRR_IP"
@@ -35,19 +35,19 @@ echo "-------------------------------"
 #bash 00_download.sh $SRR_exp $SRR_IP $SRR_input $nThreads $slurmOutFile
 
 echo "Now trimming fastq files..."
-bash 01_trimming.sh $SRR_exp $nThreads
+#bash 01_trimming.sh $SRR_exp $nThreads
 
 echo "Now mapping fastq files using bowtie2..."
-bash 02_map.sh $SRR_exp $nThreads
+#bash 02_map.sh $SRR_exp $nThreads
 
 echo "Now sorting mapped files..."
-bash 03_sort.sh $SRR_exp $nThreads
+#bash 03_sort.sh $SRR_exp $nThreads
 
 echo "Now deduplicating files using picard..."
-bash 04_dedup.sh $SRR_exp $nThreads
+#bash 04_dedup.sh $SRR_exp $nThreads
 
 echo "Now calculating enrichment..."
-bash 05_normalize.sh $SRR_exp
+bash 05_normaliseThor.sh $SRR_exp
 
 #echo "Cleaning up..."
 #cd $working_path/$SRR_exp

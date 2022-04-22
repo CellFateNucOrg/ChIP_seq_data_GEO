@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --mail-user=jennifer.semple@izb.unibe.ch
 #SBATCH --mail-type=end,fail
-#SBATCH --array=1-34%10
+#SBATCH --array=35,36,42,43#4%10
 #SBATCH --job-name="ChIP_seq_modENCODE"
 #SBATCH --partition=pshort
 #SBATCH --time=0-03:00:00
@@ -27,11 +27,11 @@ slurmOutFile=${PWD}/slurm-${SLURM_JOB_NAME}-${SLURM_ARRAY_JOB_ID}-${SLURM_ARRAY_
 
 sh wrapper.sh $SLURM_ARRAY_TASK_ID $SLURM_CPUS_PER_TASK $slurmOutFile
 
-source $CONDA_ACTIVATE
-if [ -d $working_path/qc/allRuns_multiqc_report_data ]
-then
-   rm -r $working_path/qc/allRuns_multiqc_report_data
-   rm $working_path/qc/allRuns_multiqc_report.html
-fi
-multiqc -i allRuns -o $working_path/qc $working_path
+#source $CONDA_ACTIVATE
+#if [ -d $working_path/qc/allRuns_multiqc_report_data ]
+#then
+#   rm -r $working_path/qc/allRuns_multiqc_report_data
+#   rm $working_path/qc/allRuns_multiqc_report.html
+#fi
+#multiqc -i allRuns -o $working_path/qc $working_path
 
