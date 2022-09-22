@@ -23,10 +23,14 @@ To use this script, you will need to modify 3 files.
   > _**column 5: groupTarget** (optional)_ This number designates grouping that is above the level of replicates from a single experiment. i.e. if there are two entirely separate IP experiments for H3K9me3, then you can give them the same number here, making it easier to average them.
 
 
-3. Update the **looper.sh** file, modifying line 4 
+3. Update the **looper.sh** file, modifying line 4:
+
+```
   #SBATCH --array=2-3%1 
                     ^ ^ 
                     1 2 
+```
+  
   Modify 1 with the number of datasets which you have in the SRR_names.csv, plus 1 Modify 2 with the number of cores which you want to use. More cores, faster results. But be reasonable and a good citizen, 10 is a good number.
   Modify the email address to yours in 
   #SBATCH --mail-user=peter.meister@izb.unibe.ch
