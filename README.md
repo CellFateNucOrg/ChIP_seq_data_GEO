@@ -28,12 +28,16 @@ To use this script, you will need to modify 3 files.
 ```
   #SBATCH --array=2-3%1 
                     ^ ^ 
-                    1 2 
+                    A B 
 ```
   
-  Modify 1 with the number of datasets which you have in the SRR_names.csv, plus 1 Modify 2 with the number of cores which you want to use. More cores, faster results. But be reasonable and a good citizen, 10 is a good number.
-  Modify the email address to yours in 
+  Modify A with the number of datasets which you have in the SRR_names.csv, plus 1. Modify B with the number of cores which you want to use. More cores, more jobs get processed in parallel. But be reasonable and a good citizen, 10 is a good number (but don't use more than your maximum number of jobs, as that is meaningless).
+  
+  Modify the email address to yours in:
+ 
+```
   #SBATCH --mail-user=peter.meister@izb.unibe.ch
+```
 
 All set? Run with sbatch **looper.sh**
 The scripts outputs an enrichment (normalized RPM IP - normalized RPM input; in the enrichment folder, bw format), plus a normalized bw for IP and input (for checking purposes) 
