@@ -46,16 +46,16 @@ bash 03_sort.sh $SRR_exp $nThreads
 echo "Now deduplicating files using picard and filtering blacklisted..."
 bash 04_dedup.sh $SRR_exp $nThreads
 
-#echo "Now calculating enrichment..."
-#bash 05_normalize.sh $SRR_exp
+echo "Now calculating enrichment..."
+bash 05_normalize.sh $SRR_exp
 
 #echo "Cleaning up..."
-#cd $working_path
-#rm -r SRR_download
+cd $working_path
+rm -r SRR_download
 #rm -r trimmed_fq
 #rm -r bam
-#rm -r dedup
-#rm -r filt
+rm -r dedup
+rm -r filt
 #rm -r norm
 #rm -r enrichment
 #cd $working_path/

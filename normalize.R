@@ -85,3 +85,15 @@ print(paste0(sum(is.na(enrichment$score))," NAs in input"))
 #export.bw(enrichment, paste0(working_dir,"/enrichment/ChIP_enrichment_substract_norm_",rev(unlist(strsplit(working_dir,"/")))[1],".bw"))
 export.bw(enrichment, paste0(working_dir,"/enrichment/",exp_name,"_ChIP_norm_minusInput.bw"))
 
+
+#Calculate enrichment by ratio of IP over input (add psuedo count of 1 to get rid of 0s)
+enrichment_ratio <- (mcolAsRleList(ChIP,"score")+1)/(mcolAsRleList(input,"score")+1)
+#Transform RleList into GRange
+enrichment_ratio <- bindAsGRanges(enrichment_ratio)
+#Change mcol name for saving as bigwig
+names(mcols(enrichment_ratio))<-"score"
+print(paste0(sum(is.na(enrichment$score))," NAs in input"))
+
+#Save track as bigwig in ./enrichment
+#export.bw(enrichment, paste0(working_dir,"/enrichment/ChIP_enrichment_substract_norm_",rev(unlist(strsplit(working_dir,"/")))[1],".bw"))
+export.bw(enrichment_ratio, paste0(working_dir,"/enrichment/",exp_name,"_ChIP_norm_ratioIPinput.bw"))

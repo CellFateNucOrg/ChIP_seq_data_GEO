@@ -15,7 +15,7 @@ echo $SRR_IP IP
 echo $SRR_input input
 echo $nThreads threads
 #create folder for SRR download if it does not exists and delete content if it does
-[ ! -d $working_path/SRR_download/$SRR_exp ] && mkdir $working_path/SRR_download/$SRR_exp
+[ ! -d $working_path/SRR_download/$SRR_exp ] && mkdir -p $working_path/SRR_download/$SRR_exp
 rm -rf $working_path/SRR_download/$SRR_exp/*
 [ ! -d $working_path/SRR_download/$SRR_exp/IP ] && mkdir $working_path/SRR_download/$SRR_exp/IP
 [ ! -d $working_path/SRR_download/$SRR_exp/input ] && mkdir $working_path/SRR_download/$SRR_exp/input
