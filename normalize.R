@@ -7,7 +7,6 @@ library(rtracklayer)
 genome = Celegans
 
 print(args)
-#Set parent directory holding the scripts and a folder called ./dedup/ with the reads after 
 #0. copied fastq files (in ./SRR_download folder)
 #1. trimming with trim_galore (in ./trimmed_fq folder)
 #2. mapping with bwa (in ./bam folder)
@@ -93,7 +92,6 @@ names(mcols(enrichment))<-"score"
 print(paste0(sum(is.na(enrichment$score))," NAs in input"))
 
 #Save track as bigwig in ./enrichment
-#export.bw(enrichment, paste0(working_dir,"/enrichment/ChIP_enrichment_substract_norm_",rev(unlist(strsplit(working_dir,"/")))[1],".bw"))
 export.bw(enrichment, paste0(working_dir,"/enrich_subtract/",exp_name,"_ChIP_norm_minusInput.bw"))
 
 
@@ -106,5 +104,4 @@ names(mcols(enrichment_ratio))<-"score"
 print(paste0(sum(is.na(enrichment$score))," NAs in input"))
 
 #Save track as bigwig in ./enrichment
-#export.bw(enrichment, paste0(working_dir,"/enrichment/ChIP_enrichment_substract_norm_",rev(unlist(strsplit(working_dir,"/")))[1],".bw"))
 export.bw(enrichment_ratio, paste0(working_dir,"/enrich_ratio/",exp_name,"_ChIP_norm_ratioIPinput.bw"))

@@ -1,6 +1,5 @@
 #!/bin/bash
 module add UHTS/Analysis/picard-tools/2.21.8;
-#module add UHTS/Analysis/samtools/1.8;
 module load UHTS/Analysis/samtools/1.10;
 module add UHTS/Analysis/MultiQC/1.8;
 SRR_exp=$1

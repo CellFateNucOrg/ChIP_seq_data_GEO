@@ -1,5 +1,4 @@
 #!/bin/bash
-#module add UHTS/Analysis/samtools/1.8;
 module add UHTS/Analysis/samtools/1.10;
 module add UHTS/Aligner/bwa/0.7.17;
 
@@ -28,6 +27,6 @@ do
 ##  rm ${f%.fq.gz}.sai
   fi
 done
-#module rm UHTS/Analysis/samtools/1.8;
+
 module rm UHTS/Analysis/samtools/1.10;
 module rm UHTS/Aligner/bwa/0.7.17;

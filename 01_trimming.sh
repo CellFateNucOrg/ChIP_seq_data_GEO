@@ -4,6 +4,7 @@ module add UHTS/Quality_control/fastqc/0.11.7;
 taskID=$1
 SRR_exp=$2
 nThreads=$3
+# combine multiple input/IP files into a single input/IP file
 SRR_input=$(find $working_path/SRR_download/${SRR_exp}_task${taskID}/input/ -type f -name "*.fastq.gz")
 SRR_IP=$(find $working_path/SRR_download/${SRR_exp}_task${taskID}/IP/ -type f -name "*.fastq.gz")
 echo "Input files: $SRR_input" 

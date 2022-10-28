@@ -1,18 +1,18 @@
 #!/bin/bash
 module add UHTS/Analysis/sratoolkit/2.10.7;
 
-#$1 is the full filename (with directory location) of the csv file with the ChIP set SRR info
-#$2 is the SRR numbers of the IP dataset to map
-#$3 is the SRR numbers of the input datasets to map
+#$1 is the taskID (used to extract a single line from the list_file_name file
+#$2 is the name of the experiment
+#$3 is the number of threads to use
+#$4 is the name of thhe slurm output file (to extract the number of downloaded spots)
 taskID=$1
 SRR_exp=$2
-#SRR_IP=( "$3" )
-#SRR_input=( "$4" )
 nThreads=$3
 slurmOutFile=$4
 
 echo $taskID task
 echo $SRR_exp experiment
+# extract te experimet name again to be sure we are accessing the right line
 SRR_exp1=(`grep -v "input;ip;name;group" $list_file_name | sed -n ${taskID}p | cut -f3 -d";"`)
 
 if [ "${SRR_exp1}" == "${SRR_exp}" ]; then

@@ -17,8 +17,6 @@ echo $PWD
 source ./file_locations.sh
 
 echo $working_path
-#[ ! -d $working_path/norm ] && mkdir -p $working_path/norm
-#[ ! -d $working_path/enrich ] && mkdir -p $working_path/enrich
 
 echo "Line $SLURM_ARRAY_TASK_ID"
 
