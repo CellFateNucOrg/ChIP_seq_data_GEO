@@ -1,14 +1,15 @@
 #!/bin/bash
-module add UHTS/Analysis/samtools/1.8;
+#module add UHTS/Analysis/samtools/1.8;
+module add UHTS/Analysis/samtools/1.10;
 module add UHTS/Aligner/bwa/0.7.17;
 
 SRR_exp=$1
 nThreads=$2
 FILES=$(find $working_path/trim/ -type f -name "${SRR_exp}_*.fq.gz")
-[ ! -d $working_path/aln ] && mkdir $working_path/aln
-echo $FILES
+[ ! -d $working_path/aln/ ] && mkdir -p $working_path/aln/
+echo "aligning  " ${FILES[@]}
 
-for f in $FILES
+for f in ${FILES[@]}
 do
   target_name=${f##*/}
   target_name=${target_name%med.fq.gz}
@@ -27,5 +28,6 @@ do
 ##  rm ${f%.fq.gz}.sai
   fi
 done
-module rm UHTS/Analysis/samtools/1.8;
+#module rm UHTS/Analysis/samtools/1.8;
+module rm UHTS/Analysis/samtools/1.10;
 module rm UHTS/Aligner/bwa/0.7.17;

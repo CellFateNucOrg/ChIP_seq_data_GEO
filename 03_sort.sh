@@ -1,11 +1,11 @@
 #!/bin/bash
 
-module add UHTS/Analysis/samtools/1.8;
+module add UHTS/Analysis/samtools/1.10;
 SRR_exp=$1
 nThreads=$2
-FILES=$(find $working_path/aln/ -type f -name "*.bam")
-echo $FILES
-for f in $FILES
+FILES=$(find $working_path/aln/ -type f -name "${SRR_exp}_*.bam")
+echo "sorting and indexing " ${FILES[@]}
+for f in ${FILES[@]}
 do
   echo "Sorting $f..."
   target_name=${f##*/}
@@ -19,4 +19,4 @@ do
     rm $f
   fi
 done
-module rm UHTS/Analysis/samtools/1.8;
+module rm UHTS/Analysis/samtools/1.10;

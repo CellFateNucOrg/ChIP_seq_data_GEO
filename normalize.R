@@ -16,12 +16,23 @@ print(args)
 #5. sorted and indexed with samtools (in ./filt folder)
 
 working_dir<-args[1]
-exp_name<-basename(working_dir)
-parent_dir<-dirname(working_dir)
-setwd(working_dir)
+exp_name<-args[2]
 print(working_dir)
+print(exp_name)
+if( !  dir.exists(paste0(working_dir,"/norm/"))){
+	dir.create(paste0(working_dir,"/norm/"))
+}
+if( !  dir.exists(paste0(working_dir,"/enrich_subtract/"))){
+        dir.create(paste0(working_dir,"/enrich_subtract/"))
+}
+if( !  dir.exists(paste0(working_dir,"/enrich_ratio/"))){
+        dir.create(paste0(working_dir,"/enrich_ratio/"))
+}
+
+
 read_depth <- matrix(nrow=2, ncol=1)
-filenames <- list.files(path=paste0(working_dir,"/filt/"), pattern="*_trimmed_sorted_dedup_filt_sorted.bam$")
+filenames <- list.files(path=paste0(working_dir,"/filt/"), pattern=paste0(exp_name,".*_trim_sort_dedup_filt_sort.bam$"))
+print("normalising")
 print(filenames)
 #RPM calculations, calculate for each position the coverage, with no pseudocount
 for (i in (1:length(filenames)))
@@ -49,24 +60,24 @@ for (i in (1:length(filenames)))
 #Save the mapped read number for each library with correct row names and column name
 rownames(read_depth)<- filenames
 colnames(read_depth)<-"mapped_reads"
-if(! dir.exists(paste0(parent_dir,"/qc/",exp_name))){
- dir.create(paste0(parent_dir,"/qc/",exp_name))
+if(! dir.exists(paste0(working_dir,"/qc/"))){
+ dir.create(paste0(working_dir,"/qc/"))
 }
-write.table(read_depth,paste0(parent_dir,"/qc/",exp_name,"/Sequencing_depth.txt"))
+write.table(read_depth,paste0(working_dir,"/qc/",exp_name,"_Sequencing_depth.txt"))
 
 #Command to re-load mapped read numbers from the txt file saved just above.
 #read_depth <- as.matrix(read.table("./norm/Sequencing_depth.txt"))
 
 #Substract normalized mapped read counts at each position
 #Load paired input/IP RPM bigwig tracks
-input <-import(paste0(working_dir,"/norm/input_trimmed_sorted_dedup_filt_sorted_no_pseudo_ext200_norm.bw"))
+input <-import(paste0(working_dir,"/norm/",exp_name,"_input_trim_sort_dedup_filt_sort_no_pseudo_ext200_norm.bw"))
 print("Input loaded")
 seqlevels(input)<-seqlevels(genome) # make sure levels are in same order
 seqinfo(input)<-seqinfo(genome) #add circular and genome version data
 print(paste0(sum(is.na(input$score))," NAs in input"))
 print(sapply(mcolAsRleList(input,"score"),length)==seqlengths(genome))
 
-ChIP <- import(paste0(working_dir,"/norm/IP_trimmed_sorted_dedup_filt_sorted_no_pseudo_ext200_norm.bw"))
+ChIP <- import(paste0(working_dir,"/norm/",exp_name,"_IP_trim_sort_dedup_filt_sort_no_pseudo_ext200_norm.bw"))
 print("IP loaded")  
 seqlevels(ChIP)<-seqlevels(genome)
 seqinfo(ChIP)<-seqinfo(genome)
@@ -83,7 +94,7 @@ print(paste0(sum(is.na(enrichment$score))," NAs in input"))
 
 #Save track as bigwig in ./enrichment
 #export.bw(enrichment, paste0(working_dir,"/enrichment/ChIP_enrichment_substract_norm_",rev(unlist(strsplit(working_dir,"/")))[1],".bw"))
-export.bw(enrichment, paste0(working_dir,"/enrichment/",exp_name,"_ChIP_norm_minusInput.bw"))
+export.bw(enrichment, paste0(working_dir,"/enrich_subtract/",exp_name,"_ChIP_norm_minusInput.bw"))
 
 
 #Calculate enrichment by ratio of IP over input (add psuedo count of 1 to get rid of 0s)
@@ -96,4 +107,4 @@ print(paste0(sum(is.na(enrichment$score))," NAs in input"))
 
 #Save track as bigwig in ./enrichment
 #export.bw(enrichment, paste0(working_dir,"/enrichment/ChIP_enrichment_substract_norm_",rev(unlist(strsplit(working_dir,"/")))[1],".bw"))
-export.bw(enrichment_ratio, paste0(working_dir,"/enrichment/",exp_name,"_ChIP_norm_ratioIPinput.bw"))
+export.bw(enrichment_ratio, paste0(working_dir,"/enrich_ratio/",exp_name,"_ChIP_norm_ratioIPinput.bw"))
